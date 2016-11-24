@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { GiphyService } from '../../providers/giphy';
+import { SocialSharing } from 'ionic-native';
 
 @Component({
   selector: 'page-home',
@@ -19,6 +20,18 @@ export class HomePage {
             this.trending.push(ray[i].images.downsized_large);
         }
         console.log(this.trending);
+      })
+  }
+
+  whatsappShare(url:string){
+    console.log("Compartir por Whatsapp");
+    SocialSharing.share("Message via WhatsApp",url)
+      .then(()=>{
+        alert("Success");
+      },
+      (err)=>{
+         alert("failed")
+         console.log(err);
       })
   }
 
