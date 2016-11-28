@@ -1,5 +1,7 @@
 .tmp/
 www/build/
+www/.gitkeep
+npm-debug.log
 platforms/ios/
 platforms/android/
 signed_releases/
