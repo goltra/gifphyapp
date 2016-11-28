@@ -1,0 +1,6 @@
+.tmp/
+www/build/
+platforms/ios/
+platforms/android/
+signed_releases/
+.DS_Store
