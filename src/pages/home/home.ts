@@ -29,17 +29,23 @@ export class HomePage {
 
   whatsappShare(url:string){
     console.log("Compartir por Whatsapp");
-    SocialSharing.shareViaWhatsApp("Message via WhatsApp",url,null)
-      .then((ok)=>{
-        console.log("Success");
-        console.log(ok)
-      },
-      (err)=>{
-         console.log("failed")
-         console.log(err);
-      })
+    url="https://lh5.googleusercontent.com/-7gDm1Tjt_FM/T0t6MsWvVDI/AAAAAAAAACw/KmsBaHS3Ae4/s800/15-%2520lucia%2520lopez-pajaro.gif";
+    let img = new Image(640,400);
+    img.src=url;
+    let res=atob(img);
+    console.log(res)
+    // SocialSharing.shareViaFacebook("Message via WhatsApp",url,null)
+    //   .then((ok)=>{
+    //     console.log("Success");
+    //     console.log(ok)
+    //   },
+    //   (err)=>{
+    //      console.log("failed")
+    //      console.log(err);
+    //   })
+   
   }
-
+  
   downloadFile(urlImage:string, idImage: string){
 
     const fileTransfer = new Transfer();

@@ -7,28 +7,28 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "com.ionicframework.giphy293154"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.ionicframework.giphy293154"
-        },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.ionicframework.giphy293154"
-        },
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.ionicframework.giphy293154"
         },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.ionicframework.giphy293154"
         },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.ionicframework.giphy293154"
+        },
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.ionicframework.giphy293154"
         },
-        "ionic-plugin-keyboard": {
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ionicframework.giphy293154"
+        },
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.ionicframework.giphy293154"
         },
         "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.ionicframework.giphy293154"
+        },
+        "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.giphy293154"
         }
     },
