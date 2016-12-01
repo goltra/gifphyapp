@@ -10,8 +10,9 @@
     <ion-item *ngFor="let l of trending">
       <img [src]="l.images.fixed_height.url" />
      <p> 
-     <!-- 	<button ion-button (click)="downloadFile(l.images.fixed_height.url,l.id)">Share on WhatsApp</button> -->
-     <button ion-button (click)="whatsappShare(l.images.fixed_height.url)">Share on WhatsApp</button>
+      	<!--<button ion-button (click)="downloadFile(l.images.fixed_height.url,l.id)">Share on WhatsApp</button> -->
+        <!--<button ion-button (click)="downloadFile(l.images.original.mp4,l.id)">Share on WhatsApp</button> -->
+      <button ion-button (click)="whatsappShare(l.images.fixed_height.url)">Share on WhatsApp</button>
  	</p>
     </ion-item>
   </ion-list>

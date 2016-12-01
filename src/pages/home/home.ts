@@ -29,21 +29,16 @@ export class HomePage {
 
   whatsappShare(url:string){
     console.log("Compartir por Whatsapp");
-    url="https://lh5.googleusercontent.com/-7gDm1Tjt_FM/T0t6MsWvVDI/AAAAAAAAACw/KmsBaHS3Ae4/s800/15-%2520lucia%2520lopez-pajaro.gif";
-    let img = new Image(640,400);
-    img.src=url;
-    let res=atob(img);
-    console.log(res)
-    // SocialSharing.shareViaFacebook("Message via WhatsApp",url,null)
-    //   .then((ok)=>{
-    //     console.log("Success");
-    //     console.log(ok)
-    //   },
-    //   (err)=>{
-    //      console.log("failed")
-    //      console.log(err);
-    //   })
-   
+    console.log(url);
+    SocialSharing.shareViaWhatsApp("Message via WhatsApp",url,null)
+      .then((ok)=>{
+        console.log("Success");
+        console.log(ok)
+      },
+      (err)=>{
+         console.log("failed")
+         console.log(err);
+      })
   }
   
   downloadFile(urlImage:string, idImage: string){
@@ -54,20 +49,32 @@ export class HomePage {
     let name: string;
 
     name = idImage + ".gif"
-    if(this.platform.is('android')){
-      path = cordova.file.externalCacheDirectory
-    }
-    if(this.platform.is('ios')){
-      path = cordova.file.tempDirectory;
-    }
-    fileTransfer.download(url, path + name).then((entry) => {
-      console.log('download complete: ' + entry.toURL());
-      console.log('ahora compartimos la imagen');
-      this.whatsappShare(path + name);
-    }, (error) => {
-      console.log("Error descargando imagen");
-      console.log(error);
-    });
+    // if(this.platform.is('android')){
+    //   path = cordova.file.externalCacheDirectory + name;
+    // }
+    // if(this.platform.is('ios')){
+    //   path = cordova.file.tempDirectory + name;
+    // }
+
+     if (this.platform.is('ios')) {
+        path = cordova.file.documentsDirectory + name;
+      }
+      else if(this.platform.is('android')) {
+        path = cordova.file.dataDirectory + name;
+      }
+      else {
+        return false;
+      }
+    this.whatsappShare(urlImage);
+    // fileTransfer.download(url, path).then((entry) => {
+    //   console.log('download complete from: ' + url);
+    //   console.log('download complete to: ' + entry.toURL());
+    //   console.log('ahora compartimos la imagen');
+    //   this.whatsappShare(path);
+    // }, (error) => {
+    //   console.log("Error descargando imagen");
+    //   console.log(error);
+    // });
   }
    
 
