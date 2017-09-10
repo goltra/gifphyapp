@@ -5,13 +5,15 @@
 </ion-header>
 
 <ion-content padding>
+  
   <ion-list>
 
     <ion-item *ngFor="let l of trending">
       <img [src]="l.images.fixed_height.url" />
      <p> 
      <!-- 	<button ion-button (click)="downloadFile(l.images.fixed_height.url,l.id)">Share on WhatsApp</button> -->
-     <button ion-button (click)="whatsappShare(l.images.fixed_height.url)">Share on WhatsApp</button>
+     <button ion-button (click)="compartePorWhatsapp(l.images.fixed_height.url)">Comparte en WhatsApp</button>
+     <button ion-button (click)="compartePorFacebook(l.images.fixed_height.url)">Comparte en Facebook</button>
  	</p>
     </ion-item>
   </ion-list>
